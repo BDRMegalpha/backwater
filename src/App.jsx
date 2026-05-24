@@ -16,10 +16,12 @@ import { Transmissions } from './components/Transmissions';
 import { Devlog } from './components/Devlog';
 import { AimTest } from './components/AimTest';
 import { Reaction } from './components/Reaction';
+import { Memory } from './components/Memory';
 import { Soundboard } from './components/Soundboard';
 import { Roadmap } from './components/Roadmap';
 import { Stats } from './components/Stats';
 import { FieldGuide } from './components/FieldGuide';
+import { LoadoutBuilder } from './components/LoadoutBuilder';
 import { Credits } from './components/Credits';
 import { LobbyChat } from './components/LobbyChat';
 import { Downloads } from './components/Downloads';
@@ -110,8 +112,10 @@ export default function App() {
       <Transmissions discovered={discovered} discover={discover} onTone={tone} />
       <Devlog discovered={discovered} discover={discover} onTone={tone} />
       <FieldGuide onTone={tone} />
+      <LoadoutBuilder onTone={tone} />
       <AimTest onTone={tone} />
       <Reaction onTone={tone} />
+      <Memory onTone={tone} />
       <LobbyChat />
       <Soundboard enabled={enabled} onToggle={toggle} onTone={tone} />
       <Stats />

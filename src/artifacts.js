@@ -541,6 +541,24 @@ export const ROADMAP = [
   },
 ];
 
+// Loadout builder — fake "match prediction" for the chosen weapon + artifact.
+// Pure vibe-prediction. Nothing predictive about it.
+export const LOADOUT_PREDICTIONS = [
+  'expected outcome: you will get one kill you’re proud of and three you’re not.',
+  'expected outcome: a 1-1 trade where someone laughs in voice. nobody is on voice.',
+  'expected outcome: 9-3. you are the 3.',
+  'expected outcome: 3-9. you are the 9. fix your sensitivity.',
+  'expected outcome: the artifact spawns. the artifact lands. the artifact is not yours. you die anyway.',
+  'expected outcome: your opponent disconnects. the lobby logs it as a win. nobody is happier.',
+  'expected outcome: even. you both grab a coffee in spirit.',
+  'expected outcome: you carry. liam tunes the gun next patch.',
+  'expected outcome: you lose to a player named ".". it is fine.',
+];
+
+// Pattern memory ("hold the sequence") — each step is an artifact id.
+// Reused IDs are fine; sequence grows by one per round.
+export const MEMORY_TILES = ['stutter', 'mourner', 'choir', 'threadripper', 'bloomgun', 'witness'];
+
 // Boot-sequence lines. Shown one at a time.
 export const BOOT_LINES = [
   'POST: ok',
