@@ -274,10 +274,14 @@ def wallpaper_liminalpool() -> Image.Image:
 
 def wallpaper_static() -> Image.Image:
     rng = random.Random(99)
-    img = Image.new("RGB", (W, H), P["bg"])
-    px = img.load()
-    for y in range(H):
-        for x in range(W):
+    # Generate static at 1/4 resolution then upscale with nearest-neighbor.
+    # This produces "chunky" PS1-style static that compresses ~30x better
+    # than per-pixel noise. The dither.css overlay handles the rest.
+    small_w, small_h = W // 4, H // 4
+    small = Image.new("RGB", (small_w, small_h), P["bg"])
+    spx = small.load()
+    for y in range(small_h):
+        for x in range(small_w):
             r = rng.randrange(255)
             if r < 200:
                 v = rng.randrange(20, 60)
@@ -285,7 +289,8 @@ def wallpaper_static() -> Image.Image:
                 v = rng.randrange(80, 130)
             else:
                 v = rng.randrange(170, 220)
-            px[x, y] = (v, v, v)
+            spx[x, y] = (v, v, v)
+    img = small.resize((W, H), Image.NEAREST)
     img = add_scanlines(img, opacity=40)
     d = ImageDraw.Draw(img)
     text(d, (60, 60), "NO SIGNAL", P["rust"], size=56)

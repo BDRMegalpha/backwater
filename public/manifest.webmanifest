@@ -1,0 +1,16 @@
+{
+  "name": "BACKWATER // a server graveyard",
+  "short_name": "Backwater",
+  "description": "Concept site for the Backwater Roblox shooter. A twitchy 1v1 + memoryhold artifacts. PS1 dead-internet aesthetic.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a0b0e",
+  "theme_color": "#0a0b0e",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/og.svg",      "sizes": "1200x630", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "categories": ["games", "entertainment"]
+}
