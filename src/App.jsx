@@ -23,6 +23,7 @@ import { AimTest } from './components/AimTest';
 import { Reaction } from './components/Reaction';
 import { Memory } from './components/Memory';
 import { Typing } from './components/Typing';
+import { Trivia } from './components/Trivia';
 import { Soundboard } from './components/Soundboard';
 import { Roadmap } from './components/Roadmap';
 import { Stats } from './components/Stats';
@@ -130,6 +131,7 @@ export default function App() {
       <Reaction onTone={tone} />
       <Memory onTone={tone} />
       <Typing onTone={tone} />
+      <Trivia onTone={tone} />
       <LobbyChat />
       <Soundboard enabled={enabled} onToggle={toggle} onTone={tone} />
       <Stats />

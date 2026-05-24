@@ -16,6 +16,7 @@ const ITEMS = [
   ['reaction',     'react'],
   ['memory',       'mem'],
   ['typing',       'type'],
+  ['trivia',       'trivia'],
   ['chat',         'chat'],
   ['sounds',       'snd'],
   ['stats',        'stats'],
