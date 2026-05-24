@@ -35,6 +35,26 @@ a, button, input, textarea, select, [role="button"], [data-cursor="text"] {
   color: var(--color-bw-bone);
 }
 
+/* keyboard focus: visible without overwhelming the aesthetic */
+:focus { outline: none; }
+:focus-visible {
+  outline: 1px dashed var(--color-bw-rust);
+  outline-offset: 2px;
+}
+
+/* skip-to-content link for screen readers/keyboard users */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-bw-bg);
+  color: var(--color-bw-bone);
+  padding: 8px 12px;
+  border: 1px solid var(--color-bw-rust);
+  z-index: 200;
+}
+.skip-link:focus { left: 8px; top: 8px; }
+
 /* respect reduced motion: kill flicker / glitch animations */
 @media (prefers-reduced-motion: reduce) {
   .flicker, .glitch-x, .crt-text, .hum, .typing { animation: none !important; }

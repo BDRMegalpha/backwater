@@ -289,6 +289,65 @@ export const TRANSMISSIONS = [
   },
 ];
 
+// FAQ entries. Press-pitch tone but in-character.
+export const FAQ = [
+  {
+    q: 'when does this come out',
+    a: 'when liam and bennett say so. there is no date because there is no date.',
+  },
+  {
+    q: 'is it pay to win',
+    a: 'no. echoes only buy cosmetics. there is no other currency, no premium currency, no battle pass.',
+  },
+  {
+    q: 'will there be ranked',
+    a: 'no. matchmaking will try to be fair. there will be no ladder to climb. play because you want to.',
+  },
+  {
+    q: 'is memoryhold the main mode',
+    a: 'it is the signature mode. the main mode is whatever you keep clicking on.',
+  },
+  {
+    q: 'platform',
+    a: 'roblox. pc + console + mobile per roblox’s usual cross-play. mouse + keyboard is the intended input.',
+  },
+  {
+    q: 'how do i join the playtest',
+    a: 'there isn’t one yet. when there is, it will be linked in the broadcast.tower channel.',
+  },
+  {
+    q: 'who is this for',
+    a: 'people who liked old roblox horror servers, twitchy 1v1 shooters, and rooms that don’t quite finish loading.',
+  },
+];
+
+// Echoes "shop" — vibe artifact only. No actual purchase. Echoes are the
+// discovery count from localStorage; "owning" something means having discovered
+// enough things to afford it. Nothing persists into the eventual game.
+export const COSMETICS = [
+  { id: 'sk_pistol_rust',   name: 'pistol skin: rust',   cat: 'weapon',   cost: 1 },
+  { id: 'sk_ar_bone',       name: 'AR skin: bone',       cat: 'weapon',   cost: 2 },
+  { id: 'sk_sniper_choir',  name: 'sniper: choir',       cat: 'weapon',   cost: 6 },
+  { id: 'av_lobby_kid',     name: 'avatar: lobby kid',   cat: 'avatar',   cost: 3 },
+  { id: 'av_signal_eater',  name: 'avatar: signal eater',cat: 'avatar',   cost: 8 },
+  { id: 'eff_thread_kill',  name: 'kill fx: unspooling', cat: 'effect',   cost: 5 },
+  { id: 'eff_mourner_kill', name: 'kill fx: weep',       cat: 'effect',   cost: 7 },
+  { id: 'spr_404',          name: 'spray: 404_meridian', cat: 'spray',    cost: 2 },
+  { id: 'spr_attic',        name: 'spray: attic vacancy',cat: 'spray',    cost: 4 },
+  { id: 'av_witness',       name: 'avatar: witness',     cat: 'avatar',   cost: 12 },
+];
+
+// Press-kit copy. Used by the press section. Short enough to be tweet-quoted.
+export const PRESS = {
+  blurb: 'BACKWATER is a twitchy 1v1 Roblox shooter built on top of a server graveyard. Eight artifacts you don’t fully control. One signature mode called MEMORYHOLD. No battle pass. No ranked. You remember it wrong.',
+  byline: 'developed by liam and bennett (BDRMega).',
+  contact: 'contact: bennett.racich@gmail.com',
+  links: [
+    { label: 'site',        href: 'https://backwater.web.app' },
+    { label: 'youtube',     href: 'https://youtube.com/@BDRMega' },
+  ],
+};
+
 // Boot-sequence lines. Shown one at a time.
 export const BOOT_LINES = [
   'POST: ok',
