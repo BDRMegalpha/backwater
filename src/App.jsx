@@ -10,6 +10,7 @@ import { MouseTrail } from './components/MouseTrail';
 import { Presence } from './components/Presence';
 import { PresenceSparkline } from './components/PresenceSparkline';
 import { Shortcuts } from './components/Shortcuts';
+import { Terminal } from './components/Terminal';
 import { SessionLog } from './components/SessionLog';
 import { SystemStatus } from './components/SystemStatus';
 import { Archive } from './components/Archive';
@@ -163,6 +164,7 @@ export default function App() {
 
       <Toast message={toast} onDone={() => setToast('')} />
       <Shortcuts />
+      <Terminal discoveredCount={count} />
     </div>
   );
 }

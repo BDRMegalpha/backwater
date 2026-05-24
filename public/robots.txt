@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://backwater.web.app/sitemap.xml
+
 # the backwater is not where you want to crawl, but go ahead.

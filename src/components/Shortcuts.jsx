@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 const ROWS = [
   { keys: '?',          desc: 'open this help' },
   { keys: '/',          desc: 'focus the nav search' },
-  { keys: 'Esc',        desc: 'close this help (or unfocus search)' },
+  { keys: '`',          desc: 'open the terminal' },
+  { keys: 'Esc',        desc: 'close any open overlay' },
   { keys: '↑↑↓↓←→←→ B A', desc: 'konami code — unlock the Parley artifact' },
   { keys: 'type "memoryhold"', desc: 'wake an artifact rumor' },
   { keys: 'type "echoes"',     desc: 'reveal the balance hint' },
