@@ -1,9 +1,12 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useDiscovery } from './hooks/useDiscovery';
 import { useAmbient } from './hooks/useAmbient';
+import { useMusic } from './hooks/useMusic';
 import { useKonami, useTypedWord } from './hooks/useKonami';
 import { useHiddenRoute } from './hooks/useHiddenRoute';
 import { NotFound } from './components/NotFound';
+import { ParticleField } from './components/ParticleField';
+import { MouseTrail } from './components/MouseTrail';
 import { Nav } from './components/Nav';
 import { Boot } from './components/Boot';
 import { Hero } from './components/Hero';
@@ -53,6 +56,7 @@ export default function App() {
   const [toast, setToast] = useState('');
   const { discovered, discover, clear, count } = useDiscovery();
   const { enabled, toggle, tone } = useAmbient();
+  const music = useMusic();
   const { is404 } = useHiddenRoute(discover, setToast);
 
   // konami unlocks parley
@@ -88,7 +92,9 @@ export default function App() {
   }, [discover, tone]));
 
   return (
-    <div className="scanlines flicker min-h-screen dither">
+    <div className="scanlines flicker min-h-screen dither relative">
+      <ParticleField />
+      <MouseTrail />
       <a href="#readme" className="skip-link">skip to content</a>
       {!booted && <Boot onDone={() => setBooted(true)} />}
 
@@ -96,7 +102,7 @@ export default function App() {
       <div className="border-b border-bw-dim/30 px-3 py-1 text-[11px] text-bw-dim font-mono flex justify-between items-center gap-3">
         <span className="truncate">file://localhost/backwater{typeof window !== 'undefined' ? window.location.pathname : '/index.html'}</span>
         <span className="hidden md:inline">internet explorer 6 — offline</span>
-        <AudioToggle enabled={enabled} onToggle={toggle} />
+        <AudioToggle enabled={enabled} onToggle={toggle} musicEnabled={music.enabled} onMusicToggle={music.toggle} />
       </div>
 
       {is404 && <NotFound />}
