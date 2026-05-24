@@ -10,7 +10,7 @@ const GROUPS = [
   ['game',    ['artifacts','fieldguide','powerups','maps','mapvote','builder']],
   ['lore',    ['transmissions','archive','devlog']],
   ['arcade',  ['aimtest','reaction','memory','typing','trivia','chat','sounds']],
-  ['meta',    ['stats','roadmap','wallet','sessionlog','faq','downloads','press','credits','feedback','guestbook']],
+  ['meta',    ['stats','roadmap','wallet','sessionlog','system','faq','downloads','press','credits','feedback','guestbook']],
 ];
 
 const LABELS = {
@@ -18,7 +18,7 @@ const LABELS = {
   artifacts:'artifacts', fieldguide:'guide', powerups:'power', maps:'maps', mapvote:'vote', builder:'build',
   transmissions:'txns', archive:'archive', devlog:'devlog',
   aimtest:'aim', reaction:'react', memory:'mem', typing:'type', trivia:'trivia', chat:'chat', sounds:'snd',
-  stats:'stats', roadmap:'roadmap', wallet:'echoes', sessionlog:'save', faq:'faq', downloads:'dl', press:'press', credits:'credits', feedback:'feedback', guestbook:'guestbook',
+  stats:'stats', roadmap:'roadmap', wallet:'echoes', sessionlog:'save', system:'sys', faq:'faq', downloads:'dl', press:'press', credits:'credits', feedback:'feedback', guestbook:'guestbook',
 };
 
 // Flat id list for the IntersectionObserver.

@@ -11,6 +11,7 @@ import { Presence } from './components/Presence';
 import { PresenceSparkline } from './components/PresenceSparkline';
 import { Shortcuts } from './components/Shortcuts';
 import { SessionLog } from './components/SessionLog';
+import { SystemStatus } from './components/SystemStatus';
 import { Archive } from './components/Archive';
 import { Nav } from './components/Nav';
 import { Boot } from './components/Boot';
@@ -151,6 +152,7 @@ export default function App() {
       <Roadmap />
       <Wallet discoveredCount={count} onTone={tone} />
       <SessionLog discoveredCount={count} />
+      <SystemStatus />
       <Faq onTone={tone} />
       <Downloads onTone={tone} />
       <Press onTone={tone} />
