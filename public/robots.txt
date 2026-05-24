@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# the backwater is not where you want to crawl, but go ahead.

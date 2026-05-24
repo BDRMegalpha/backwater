@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "bdrmega-hub"
+  },
+  "targets": {
+    "bdrmega-hub": {
+      "hosting": {
+        "backwater": ["backwater"]
+      }
+    }
+  }
+}

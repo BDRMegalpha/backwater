@@ -1,0 +1,222 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bw-bg: #0a0b0e;
+  --color-bw-fg: #c8c4b8;
+  --color-bw-dim: #6e6a5d;
+  --color-bw-rust: #8a3a1f;
+  --color-bw-bone: #d8cfb8;
+  --color-bw-bruise: #3a2148;
+  --color-bw-sick: #6f8a3a;
+  --color-bw-beacon: #4a8aff;
+  --font-display: "Times New Roman", Times, serif;
+  --font-mono: "Courier New", Courier, monospace;
+  --font-sans: "MS Sans Serif", "Tahoma", sans-serif;
+}
+
+html, body, #root {
+  background: var(--color-bw-bg);
+  color: var(--color-bw-fg);
+  font-family: var(--font-mono);
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* default custom cursor — a tiny CRT crosshair. Inputs/buttons override. */
+body {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='17' height='17' viewBox='0 0 17 17'><path d='M8.5 0v6M8.5 11v6M0 8.5h6M11 8.5h6' stroke='%23c8c4b8' stroke-width='1'/><circle cx='8.5' cy='8.5' r='1' fill='%238a3a1f'/></svg>") 8 8, crosshair;
+}
+a, button, input, textarea, select, [role="button"], [data-cursor="text"] {
+  cursor: auto;
+}
+
+::selection {
+  background: var(--color-bw-rust);
+  color: var(--color-bw-bone);
+}
+
+/* respect reduced motion: kill flicker / glitch animations */
+@media (prefers-reduced-motion: reduce) {
+  .flicker, .glitch-x, .crt-text, .hum, .typing { animation: none !important; }
+}
+
+/* CRT scanlines */
+.scanlines::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.18) 0px,
+      rgba(0,0,0,0.18) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  mix-blend-mode: multiply;
+}
+
+.scanlines::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 51;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.55) 100%);
+}
+
+.dither {
+  background-image:
+    radial-gradient(rgba(200,196,184,0.04) 1px, transparent 1px),
+    radial-gradient(rgba(200,196,184,0.03) 1px, transparent 1px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 1px;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.72; }
+  94% { opacity: 1; }
+  97% { opacity: 0.85; }
+  98% { opacity: 1; }
+}
+.flicker { animation: flicker 6s infinite steps(1, end); }
+
+@keyframes glitch-x {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-1px); }
+  40% { transform: translateX(1px); }
+  60% { transform: translateX(0); }
+  80% { transform: translateX(-1px); }
+}
+.glitch-x { animation: glitch-x 8s infinite; }
+
+@keyframes hum {
+  0%, 100% { text-shadow: 0 0 1px rgba(200,196,184,0.4); }
+  50% { text-shadow: 0 0 2px rgba(200,196,184,0.6), 0 0 8px rgba(138,58,31,0.15); }
+}
+.hum { animation: hum 4s ease-in-out infinite; }
+
+.broken-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background:
+    linear-gradient(135deg, #1a1c20 25%, transparent 25%) -10px 0,
+    linear-gradient(225deg, #1a1c20 25%, transparent 25%) -10px 0,
+    linear-gradient(315deg, #1a1c20 25%, transparent 25%),
+    linear-gradient(45deg, #1a1c20 25%, transparent 25%);
+  background-size: 20px 20px;
+  background-color: #131418;
+  border: 1px solid #2a2c33;
+  display: grid;
+  place-items: center;
+  color: #4a4c54;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.crt-text {
+  text-shadow: 0 0 1px rgba(200,196,184,0.4);
+}
+
+/* link styles in lore text — feel like phpBB c. 2006 */
+.lore a { color: var(--color-bw-beacon); text-decoration: underline; }
+.lore a:hover { color: var(--color-bw-bone); }
+
+/* the locked artifact — silhouette with redacted text */
+.locked {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(138,58,31,0.06) 0 6px,
+      transparent 6px 12px
+    );
+}
+.locked .label { color: transparent; text-shadow: 0 0 8px rgba(216,207,184,0.6); user-select: none; }
+
+/* boot screen */
+.boot {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 100;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 24px;
+  font-family: var(--font-mono);
+  color: #d8cfb8;
+  font-size: 13px;
+  line-height: 1.5;
+  pointer-events: all;
+}
+.boot.done {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 420ms ease-out;
+}
+
+@keyframes typing-caret {
+  50% { opacity: 0; }
+}
+.caret::after {
+  content: "▮";
+  margin-left: 4px;
+  color: var(--color-bw-bone);
+  animation: typing-caret 1s steps(1) infinite;
+}
+
+/* sticky nav */
+.nav-glow {
+  background:
+    linear-gradient(to bottom, rgba(10,11,14,0.92), rgba(10,11,14,0.78));
+  backdrop-filter: blur(2px);
+}
+
+/* aim test canvas */
+.aimtest-canvas {
+  background:
+    radial-gradient(circle at center, rgba(138,58,31,0.06), transparent 60%),
+    #0d0e12;
+  border: 1px solid var(--color-bw-dim);
+}
+
+/* sectioned ascii map */
+.map-pre {
+  font-family: var(--font-mono);
+  color: var(--color-bw-fg);
+  font-size: 12px;
+  line-height: 1.05;
+  white-space: pre;
+  letter-spacing: 0.04em;
+}
+.map-pre .hot { color: var(--color-bw-rust); cursor: pointer; }
+.map-pre .hot:hover { color: var(--color-bw-bone); background: rgba(138,58,31,0.15); }
+
+/* small chip */
+.chip {
+  border: 1px solid var(--color-bw-dim);
+  padding: 1px 6px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--color-bw-dim);
+  text-transform: uppercase;
+}
+
+/* corrupted text effect for transmissions */
+.corrupt-line {
+  position: relative;
+}
+.corrupt-line::before {
+  content: attr(data-glitch);
+  position: absolute;
+  inset: 0;
+  color: var(--color-bw-rust);
+  mix-blend-mode: screen;
+  transform: translate(1px, 0);
+  opacity: 0.4;
+  pointer-events: none;
+}

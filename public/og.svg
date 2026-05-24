@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="dots" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.8" fill="rgba(200,196,184,0.06)"/>
+    </pattern>
+    <pattern id="scan" x="0" y="0" width="1" height="4" patternUnits="userSpaceOnUse">
+      <rect width="1" height="1" fill="rgba(0,0,0,0.25)"/>
+    </pattern>
+    <radialGradient id="vig" cx="50%" cy="50%" r="65%">
+      <stop offset="60%" stop-color="rgba(0,0,0,0)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.7)"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0a0b0e"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect width="1200" height="630" fill="url(#scan)"/>
+  <g font-family="Courier New, monospace" fill="#6e6a5d" font-size="14">
+    <text x="40" y="40">file://localhost/backwater/index.html</text>
+    <text x="1010" y="40">signal: weak</text>
+  </g>
+  <g font-family="Times New Roman, serif" fill="#d8cfb8" text-anchor="middle">
+    <text x="600" y="290" font-size="180" letter-spacing="6">BACKW@TER</text>
+  </g>
+  <g font-family="Courier New, monospace" fill="#c8c4b8" text-anchor="middle">
+    <text x="600" y="340" font-size="22">a place where deleted lobbies still echo. you remember it wrong.</text>
+  </g>
+  <g font-family="Courier New, monospace" fill="#6e6a5d" text-anchor="middle">
+    <text x="600" y="430" font-size="16">1v1 · 2v2 · TDM · FFA · MEMORYHOLD</text>
+    <text x="600" y="460" font-size="14">eight artifacts · echoes only · cosmetics only · no battle pass</text>
+  </g>
+  <g font-family="Courier New, monospace" fill="#8a3a1f" text-anchor="middle">
+    <text x="600" y="560" font-size="13">// last updated 11/04/2009 — this page may not exist tomorrow</text>
+  </g>
+  <rect width="1200" height="630" fill="url(#vig)"/>
+</svg>
