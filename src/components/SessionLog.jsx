@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Section } from './Section';
-import { ARTIFACTS, RUMORED, TRANSMISSIONS, DEVLOG } from '../artifacts';
+import { RUMORED, TRANSMISSIONS, DEVLOG } from '../artifacts';
 
 // "save file" view — reads every localStorage key the site writes and
 // shows the visitor what they've accumulated. Pure local mirror; no

@@ -11,30 +11,26 @@ const ROUTES = {
   '/9-04':            { key: 'route:9-04',           toast: '/9-04 — we don’t talk about 0.0.5a.' },
 };
 
-const KNOWN_PUBLIC = new Set([
-  '/', '/index.html',
-  '/og.svg', '/favicon.svg', '/robots.txt',
-  ...Object.keys(ROUTES),
-]);
+// Initial path checked synchronously so SSR/first-paint know if we're on a
+// secret/404 route. Effect below just fires the side effects (toast + discovery).
+function initial404() {
+  if (typeof window === 'undefined') return false;
+  const path = window.location.pathname;
+  if (ROUTES[path]) return false;
+  return path !== '/' && path !== '/index.html';
+}
 
 export function useHiddenRoute(discover, setToast) {
-  const [is404, setIs404] = useState(false);
+  const [is404] = useState(initial404);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const path = window.location.pathname;
-
-    // exact-match secret route
     const r = ROUTES[path];
     if (r) {
       discover(r.key);
       setToast?.(r.toast);
-      return;
-    }
-
-    // anything else non-root is a 404
-    if (path !== '/' && path !== '/index.html') {
-      setIs404(true);
+    } else if (path !== '/' && path !== '/index.html') {
       discover('route:404');
     }
   }, [discover, setToast]);

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Section } from './Section';
 import { ARTIFACTS, FIELD_GUIDE } from '../artifacts';
 
@@ -17,8 +17,16 @@ function shuffle(arr) {
   return a;
 }
 
+function buildQ() {
+  const valid = ARTIFACTS.filter((a) => FIELD_GUIDE[a.id]?.mechanic);
+  const answer = valid[Math.floor(Math.random() * valid.length)];
+  const distractors = shuffle(valid.filter((a) => a.id !== answer.id)).slice(0, 3);
+  const choices = shuffle([answer, ...distractors]);
+  return { answer, choices, mechanic: FIELD_GUIDE[answer.id].mechanic };
+}
+
 export function Trivia({ onTone }) {
-  const [round, setRound] = useState(0);
+  const [, setRound] = useState(0);
   const [streak, setStreak] = useState(0);
   const [best, setBest] = useState(() => {
     try { return Number(localStorage.getItem(KEY) || 0); } catch { return 0; }
@@ -26,14 +34,9 @@ export function Trivia({ onTone }) {
   const [resolved, setResolved] = useState(null); // 'right' | 'wrong' | null
   const [picked, setPicked] = useState(null);
 
-  const q = useMemo(() => {
-    const valid = ARTIFACTS.filter((a) => FIELD_GUIDE[a.id]?.mechanic);
-    const answer = valid[Math.floor(Math.random() * valid.length)];
-    const distractors = shuffle(valid.filter((a) => a.id !== answer.id)).slice(0, 3);
-    const choices = shuffle([answer, ...distractors]);
-    return { answer, choices, mechanic: FIELD_GUIDE[answer.id].mechanic };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [round]);
+  // Each round's question is rolled in the click handler (next/pick) and
+  // stored in state, so re-renders don't re-roll. Math.random stays out of render.
+  const [q, setQ] = useState(() => buildQ());
 
   function pick(a) {
     if (resolved) return;
@@ -47,7 +50,12 @@ export function Trivia({ onTone }) {
         try { localStorage.setItem(KEY, String(next)); } catch { /* ignore */ }
       }
       onTone?.('reveal');
-      setTimeout(() => { setResolved(null); setPicked(null); setRound((r) => r + 1); }, 900);
+      setTimeout(() => {
+        setResolved(null);
+        setPicked(null);
+        setQ(buildQ());
+        setRound((r) => r + 1);
+      }, 900);
     } else {
       setResolved('wrong');
       setStreak(0);
@@ -56,11 +64,12 @@ export function Trivia({ onTone }) {
   }
 
   function next() {
-    setResolved(null); setPicked(null); setRound((r) => r + 1);
+    setResolved(null);
+    setPicked(null);
+    setQ(buildQ());
+    setRound((r) => r + 1);
     onTone?.('click');
   }
-
-  useEffect(() => { /* round changes via setter */ }, []);
 
   return (
     <Section

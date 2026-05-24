@@ -81,8 +81,10 @@ function Beat({ idx, active }) {
 export function Trailer() {
   const [t, setT] = useState(0); // ms within loop
   const [paused, setPaused] = useState(false);
-  const startRef = useRef(performance.now());
+  const startRef = useRef(0);
   const offsetRef = useRef(0);
+  // Seed the start ref once after first render so we don't read performance.now during render.
+  useEffect(() => { if (startRef.current === 0) startRef.current = performance.now(); }, []);
 
   useEffect(() => {
     let raf;

@@ -25,6 +25,8 @@ export function Memory({ onTone }) {
   const timerRef = useRef(null);
 
   function start() {
+    // Math.random fine here — bound to an onClick, not render.
+    // eslint-disable-next-line react-hooks/purity
     const first = [MEMORY_TILES[Math.floor(Math.random() * MEMORY_TILES.length)]];
     setSeq(first);
     setPlayerIdx(0);
@@ -34,6 +36,7 @@ export function Memory({ onTone }) {
   }
 
   function next(currentSeq) {
+    // eslint-disable-next-line react-hooks/purity
     const more = [...currentSeq, MEMORY_TILES[Math.floor(Math.random() * MEMORY_TILES.length)]];
     setSeq(more);
     setPlayerIdx(0);

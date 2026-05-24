@@ -65,6 +65,7 @@ export function Reaction({ onTone }) {
       return;
     }
     if (state === 'go') {
+      // eslint-disable-next-line react-hooks/purity
       const ms = performance.now() - startRef.current;
       const copy = trials.slice();
       copy[idx] = ms;

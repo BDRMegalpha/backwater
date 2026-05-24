@@ -12,7 +12,7 @@ export function AimTest({ onTone }) {
   const canvasRef = useRef(null);
   const targetsRef = useRef([]);
   const stateRef = useRef({ running: false, started: 0, score: 0, reactSum: 0, reactN: 0, misses: 0 });
-  const [tick, setTick] = useState(0);
+  const [, setTick] = useState(0);
   const [endState, setEndState] = useState(null);
   const [highscore, setHighscore] = useState(() => {
     try { return Number(localStorage.getItem(HIGHSCORE_KEY) || 0); } catch { return 0; }
@@ -138,6 +138,8 @@ export function AimTest({ onTone }) {
     for (const tg of targetsRef.current) {
       const d = Math.hypot(tg.x - mx, tg.y - my);
       if (d <= tg.r) {
+        // Canvas game loop intentionally mutates the per-frame target objects.
+        // eslint-disable-next-line react-hooks/immutability
         tg.dead = true;
         hit = true;
         s.score += 1;

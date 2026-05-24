@@ -116,7 +116,7 @@ function Mockup({ id }) {
   return <div className="aspect-[4/3] bg-bw-dim/20" />;
 }
 
-export function Maps({ onTone }) {
+export function Maps() {
   return (
     <Section
       id="maps"
