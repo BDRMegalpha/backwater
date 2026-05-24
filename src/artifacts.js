@@ -190,6 +190,34 @@ export const GUESTBOOK_SEED = [
     when: '11/04/2009 02:09',
     body: 'add ranked',
   },
+  {
+    id: 'g6',
+    user: 'witness_thing',
+    flair: '☼',
+    when: '11/04/2009 03:31',
+    body: 'i looked through the witness at the witness. it looked back. i am fine. it is fine. everything is fine.',
+  },
+  {
+    id: 'g7',
+    user: 'kayla.404',
+    flair: '',
+    when: '11/04/2009 11:44',
+    body: 'the aim trainer here is harder than the one in the actual game. on purpose i hope.',
+  },
+  {
+    id: 'g8',
+    user: 'liam',
+    flair: 'dev',
+    when: '11/04/2009 12:18',
+    body: 'we tuned it harder on purpose. you’ll be fine in real matches.',
+  },
+  {
+    id: 'g9',
+    user: 'broadcast.tower',
+    flair: 'sys',
+    when: '11/04/2009 13:00',
+    body: 'signal: weak. listeners: 1247. guestbook: tolerable.',
+  },
 ];
 
 // Dev log / patch notes. Glitched dates, sub-versions, ominous notes.
@@ -287,6 +315,34 @@ export const TRANSMISSIONS = [
     subject: 'signal report 11/04',
     body: 'signal: weak. listeners: 1247. listeners actually online: 3. the rest are guests. please be polite.',
   },
+  {
+    id: 't7',
+    channel: 'ch.02',
+    from: 'glassyard@archive',
+    subject: 'shard log, week 4',
+    body: 'the shards no longer despawn at 3min. they no longer despawn at all. we are leaving them. please don’t walk barefoot. this is a videogame. nobody is barefoot. you know what i mean.',
+  },
+  {
+    id: 't8',
+    channel: 'ch.??',
+    from: 'lol_who',
+    subject: 'composition: lullaby',
+    body: 'i wrote a chord in three minor keys. then i deleted my account. the chord is still on the broadcast tower. play it twice and the other person forgets their weapon. i am not sorry.',
+  },
+  {
+    id: 't9',
+    channel: 'ch.05',
+    from: 'bennett',
+    subject: 'design note (for liam)',
+    body: 'i keep wanting to add ranked. don’t let me. remind me of this message when i bring it up. — b',
+  },
+  {
+    id: 't10',
+    channel: 'ch.06',
+    from: 'admin@backwater',
+    subject: 'maintenance window',
+    body: 'no maintenance window has been scheduled. there will be no maintenance window. the lobby cannot be brought offline because the lobby is not technically online. please adjust your expectations.',
+  },
 ];
 
 // Live lobby chat seed. Loops endlessly. Users are mostly dead, occasionally
@@ -367,6 +423,40 @@ export const PRESS = {
     { label: 'youtube',     href: 'https://youtube.com/@BDRMega' },
   ],
 };
+
+// Roadmap entries. In-character broadcasts, vague-on-purpose.
+export const ROADMAP = [
+  {
+    when: 'next',
+    title: 'memoryhold open trial',
+    body: 'small group. real match. real losses. likely the people in the guestbook above and the eight of you who already typed memoryhold somewhere.',
+  },
+  {
+    when: 'after that',
+    title: 'sector: cliffside walkable',
+    body: 'just walkable. not playable. you can stand on it and listen to the rack of dead servers hum. one will be playable. nobody is supposed to know which one.',
+  },
+  {
+    when: 'when liam says',
+    title: 'parley as a real artifact',
+    body: 'the rumored one. it’s a social mechanic and we have to test it before we trust it. it might break the game. it might be the game.',
+  },
+  {
+    when: 'soon',
+    title: 'echoes wallet on the live site',
+    body: 'fake right now. real soon. your discoveries here will mean something specific in the actual game. probably a spray. probably the 404_meridian one.',
+  },
+  {
+    when: 'eventually',
+    title: 'second signature mode',
+    body: 'not announced. not named. one playtester has seen a glimpse. they will not say what it was.',
+  },
+  {
+    when: '—',
+    title: 'we’re not announcing dates',
+    body: 'dates are how indie studios disappoint people. we will ship when liam says we ship.',
+  },
+];
 
 // Boot-sequence lines. Shown one at a time.
 export const BOOT_LINES = [

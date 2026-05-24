@@ -15,6 +15,9 @@ import { Map } from './components/Map';
 import { Transmissions } from './components/Transmissions';
 import { Devlog } from './components/Devlog';
 import { AimTest } from './components/AimTest';
+import { Reaction } from './components/Reaction';
+import { Soundboard } from './components/Soundboard';
+import { Roadmap } from './components/Roadmap';
 import { LobbyChat } from './components/LobbyChat';
 import { Downloads } from './components/Downloads';
 import { Wallet } from './components/Wallet';
@@ -104,7 +107,10 @@ export default function App() {
       <Transmissions discovered={discovered} discover={discover} onTone={tone} />
       <Devlog discovered={discovered} discover={discover} onTone={tone} />
       <AimTest onTone={tone} />
+      <Reaction onTone={tone} />
       <LobbyChat />
+      <Soundboard enabled={enabled} onToggle={toggle} onTone={tone} />
+      <Roadmap />
       <Wallet discoveredCount={count} onTone={tone} />
       <Faq onTone={tone} />
       <Downloads onTone={tone} />
