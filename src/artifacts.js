@@ -632,6 +632,54 @@ export const LOADOUT_PREDICTIONS = [
 // Reused IDs are fine; sequence grows by one per round.
 export const MEMORY_TILES = ['stutter', 'mourner', 'choir', 'threadripper', 'bloomgun', 'witness'];
 
+// Lore archive — long-form pieces. Each is in-character. They sit in a
+// dedicated section, expandable, no decoder gimmick — the transmissions
+// section is for that.
+export const ARCHIVE = [
+  {
+    id: 'a1',
+    title: 'on staying in the lobby too long',
+    by: 'admin@backwater',
+    when: '11/04/2009',
+    body: `the lobby is not a waiting room. it is a place. it remembers what you did the last three times you stood in it, even if you didn't do anything.\n\nplayers who stand still in the lobby for more than four minutes — measured across all of their sessions, not just this one — eventually find a second terminal. it has always been there. it loads later than the rest. it does not have a queue option. it has one button.\n\nwe have not pressed the button.\n\nwe do not believe the button is for us.`,
+  },
+  {
+    id: 'a2',
+    title: 'caretaker_b, bloomgun log entries 1 through 41',
+    by: 'archive',
+    when: '07/2009 — 09/2009',
+    body: `entry 1: planted three. they grew into wheat. exploded into bread. nobody picked up the bread.\nentry 7: planted on a wall. the flower grew sideways, parallel to the floor. exploded normally.\nentry 14: planted on a teammate. nothing grew. the teammate did not respawn.\nentry 22: planted in the round room of the lobby. the flower did not grow. seven seconds later, the lobby's free-model hum changed key.\nentry 29: planted on a reliquary pickup. it deleted itself.\nentry 33: the plant grew the shape of a player. the player did not move. when i shot the plant the player ran away. i have stopped logging.\nentry 41: i'm logging again. the player came back. they are typing this entry. i am not.`,
+  },
+  {
+    id: 'a3',
+    title: 'broadcast tower carrier signal',
+    by: 'broadcast.tower',
+    when: 'continuous',
+    body: `the tower has been transmitting since 2007. it transmits in three layers, all on the same frequency:\n\n1. the carrier itself — a low hum at 55.7 Hz. inaudible in matches; clearly audible while spectating from the round room of the lobby.\n2. the schedule layer — pulses indicating when artifacts will next spawn. used internally by the spawner.\n3. the guestbook layer — every guestbook post since 2009, modulated onto the carrier in the order they were submitted. listen long enough and you will hear your own.\n\nthere is a fourth layer. it shows up on spectrum scans intermittently. it is not coming from the tower.`,
+  },
+  {
+    id: 'a4',
+    title: 'the attic',
+    by: '404_meridian',
+    when: 'undated',
+    body: `the attic is not on the map. it is not in the source code. it is in the sound mix.\n\nload any map. spectate. mute everything except the ambient channel. ascend until the camera is above the ceiling. you will hear it.\n\nfootsteps. someone walking around above the geometry. always the same pattern. always heel-toe heel-toe heel-toe. always your character's footstep sound.\n\ni think the attic is a server-side recording of every player who has ever quit a match early. they are still walking.`,
+  },
+  {
+    id: 'a5',
+    title: 'liam, design note (pinned)',
+    by: 'liam',
+    when: '10/2009',
+    body: `the artifact you don't pick up changes the match more than the one you do. design around that.\n\nwhen the glyph beam appears, both players have to commit: take it, contest it, ignore it, fake commit and then ignore it. every option is correct. the wrong option is the one your opponent is expecting you to pick.\n\nthe artifact is the prompt. the players are the answer. balancing artifacts is balancing what kinds of answers we want to see.\n\n— l`,
+  },
+  {
+    id: 'a6',
+    title: 'on echoes',
+    by: 'admin@backwater',
+    when: '11/04/2009',
+    body: `echoes are not a currency. they are an audit log of what you've done in the game written in a way you can spend on cosmetics.\n\none echo per match completed, regardless of placement. one extra echo per artifact picked up (not per kill made with one). bonus echoes for the discovery rewards we haven't announced yet.\n\nyou cannot buy echoes. you cannot trade echoes. you cannot give echoes. if you delete your account, the echoes stay in the database, attached to a username nobody can log into. we are not going to clean that database.`,
+  },
+];
+
 // Boot-sequence lines. Shown one at a time.
 export const BOOT_LINES = [
   'POST: ok',

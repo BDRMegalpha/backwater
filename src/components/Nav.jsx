@@ -11,6 +11,7 @@ const ITEMS = [
   ['maps',         'maps'],
   ['builder',      'build'],
   ['transmissions','txns'],
+  ['archive',      'archive'],
   ['devlog',       'devlog'],
   ['aimtest',      'aim'],
   ['reaction',     'react'],

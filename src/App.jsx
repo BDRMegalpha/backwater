@@ -10,6 +10,7 @@ import { MouseTrail } from './components/MouseTrail';
 import { Presence } from './components/Presence';
 import { Shortcuts } from './components/Shortcuts';
 import { SessionLog } from './components/SessionLog';
+import { Archive } from './components/Archive';
 import { Nav } from './components/Nav';
 import { Boot } from './components/Boot';
 import { Hero } from './components/Hero';
@@ -128,6 +129,7 @@ export default function App() {
       <Artifacts onTone={tone} discovered={discovered} />
       <Map onTone={tone} />
       <Transmissions discovered={discovered} discover={discover} onTone={tone} />
+      <Archive onTone={tone} />
       <Devlog discovered={discovered} discover={discover} onTone={tone} />
       <FieldGuide onTone={tone} />
       <Powerups />
