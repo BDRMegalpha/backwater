@@ -181,7 +181,7 @@ export const GUESTBOOK_SEED = [
   },
   {
     id: 'g4',
-    user: 'liam',
+    user: 'dev',
     flair: 'dev',
     when: '11/04/2009 01:22',
     body: 'we are not adding ranked. we are not adding ranked. stop asking.',
@@ -209,7 +209,7 @@ export const GUESTBOOK_SEED = [
   },
   {
     id: 'g8',
-    user: 'liam',
+    user: 'dev',
     flair: 'dev',
     when: '11/04/2009 12:18',
     body: 'we tuned it harder on purpose. you’ll be fine in real matches.',
@@ -307,9 +307,9 @@ export const TRANSMISSIONS = [
   {
     id: 't5',
     channel: 'ch.04',
-    from: 'liam',
+    from: 'dev',
     subject: 'design note (for self)',
-    body: 'the artifact you don’t pick up changes the match more than the one you do. design around that. tell bennett.',
+    body: 'the artifact you don’t pick up changes the match more than the one you do. design around that. tell the other one.',
   },
   {
     id: 't6',
@@ -335,9 +335,9 @@ export const TRANSMISSIONS = [
   {
     id: 't9',
     channel: 'ch.05',
-    from: 'bennett',
-    subject: 'design note (for liam)',
-    body: 'i keep wanting to add ranked. don’t let me. remind me of this message when i bring it up. — b',
+    from: 'admin@backwater',
+    subject: 'design note (for the team)',
+    body: 'we keep wanting to add ranked. don’t let us. remind us of this message when it comes up again.',
   },
   {
     id: 't10',
@@ -383,24 +383,24 @@ export const LOBBY_CHAT = [
   { u: '404_meridian', t: 'nobody is in the attic right now. nobody is ever in the attic.' },
   { u: 'mrk_03',       t: 'is anyone here actually real' },
   { u: 'broadcast.tower', t: 'signal: weak. listeners: 1247.', flair: 'sys' },
-  { u: 'liam',         t: 'i can hear you typing.', flair: 'dev' },
+  { u: 'dev',          t: 'i can hear you typing.', flair: 'dev' },
   { u: 'pls',          t: 'add ranked' },
   { u: 'crayonmaiden', t: 'pls stop' },
   { u: 'admin@backwater', t: 'someone left the door open. do not panic.', flair: 'sys' },
   { u: '404_meridian', t: 'i found a sector that isn’t on the map. it is on the SOUND map. listen up.' },
   { u: 'mrk_03',       t: 'the witness saw me through three walls. that’s not how it’s supposed to work' },
-  { u: 'liam',         t: 'that is exactly how it is supposed to work.', flair: 'dev' },
+  { u: 'dev',          t: 'that is exactly how it is supposed to work.', flair: 'dev' },
   { u: 'unknown',      t: 'YOU/STAYED/TOO/LONG. PLEASE/QUEUE.', flair: 'corrupt' },
   { u: 'pls',          t: 'ok forget ranked. add a battle pass' },
-  { u: 'liam',         t: 'no.', flair: 'dev' },
+  { u: 'dev',          t: 'no.', flair: 'dev' },
   { u: 'crayonmaiden', t: 'i love it here' },
   { u: 'kayla.404',    t: 'cul-de-sac loop in memoryhold is a war crime' },
-  { u: 'liam',         t: 'cul-de-sac loop in memoryhold is the test of who you really are.', flair: 'dev' },
+  { u: 'dev',          t: 'cul-de-sac loop in memoryhold is the test of who you really are.', flair: 'dev' },
   { u: 'mrk_03',       t: 'i finally hit a witness from across the big box. felt insane' },
   { u: '404_meridian', t: 'backyard at dusk is the prettiest map. fight me' },
   { u: 'server.room',  t: 'I CAN HEAR YOU TYPING.', flair: 'corrupt' },
   { u: 'pls',          t: 'add ranked to memoryhold' },
-  { u: 'liam',         t: 'no.', flair: 'dev' },
+  { u: 'dev',          t: 'no.', flair: 'dev' },
 ];
 
 // FAQ entries. Press-pitch tone but in-character.
@@ -667,10 +667,10 @@ export const ARCHIVE = [
   },
   {
     id: 'a5',
-    title: 'liam, design note (pinned)',
-    by: 'liam',
+    title: 'design note (pinned)',
+    by: 'dev',
     when: '10/2009',
-    body: `the artifact you don't pick up changes the match more than the one you do. design around that.\n\nwhen the glyph beam appears, both players have to commit: take it, contest it, ignore it, fake commit and then ignore it. every option is correct. the wrong option is the one your opponent is expecting you to pick.\n\nthe artifact is the prompt. the players are the answer. balancing artifacts is balancing what kinds of answers we want to see.\n\n— l`,
+    body: `the artifact you don't pick up changes the match more than the one you do. design around that.\n\nwhen the glyph beam appears, both players have to commit: take it, contest it, ignore it, fake commit and then ignore it. every option is correct. the wrong option is the one your opponent is expecting you to pick.\n\nthe artifact is the prompt. the players are the answer. balancing artifacts is balancing what kinds of answers we want to see.`,
   },
   {
     id: 'a6',
@@ -682,9 +682,9 @@ export const ARCHIVE = [
   {
     id: 'a7',
     title: 'on no ranked',
-    by: 'liam',
+    by: 'dev',
     when: '10/2009',
-    body: `we will not be adding ranked. people will ask. we will say no.\n\nranked games optimize for the ladder; the ladder optimizes for whichever strategy is currently strongest; the playerbase converges on that strategy; the variance that made matches feel weird is gone.\n\nbackwater needs the variance. the artifacts are designed around it. an artifact that you might or might not grab is a different game from an artifact you always grab because grabbing it is rank-optimal.\n\nmatchmaking will be soft. it will try to give you fair fights. it will not score you. you will play because the next match might be the one with the choir on rooftop.\n\n— l`,
+    body: `we will not be adding ranked. people will ask. we will say no.\n\nranked games optimize for the ladder; the ladder optimizes for whichever strategy is currently strongest; the playerbase converges on that strategy; the variance that made matches feel weird is gone.\n\nbackwater needs the variance. the artifacts are designed around it. an artifact that you might or might not grab is a different game from an artifact you always grab because grabbing it is rank-optimal.\n\nmatchmaking will be soft. it will try to give you fair fights. it will not score you. you will play because the next match might be the one with the choir on rooftop.`,
   },
   {
     id: 'a8',
@@ -699,13 +699,6 @@ export const ARCHIVE = [
     by: '[redacted]',
     when: '10/2█/2009',
     body: `during build 0.0.5a there was a wall in the lobby's round room that occasionally became walkable. you could clip into it for about 0.4 seconds before it remembered it was solid.\n\nwe pushed a patch. the patch removed the wall entirely, replaced it with a doorway.\n\nthe wall came back the next day.\n\nwe rolled back the patch. the doorway stayed. we now have both.\n\nthe wall and the doorway are not adjacent. they are not in the same room. they were the same wall.`,
-  },
-  {
-    id: 'a10',
-    title: 'overnight commits',
-    by: 'admin@backwater',
-    when: '05/24/2026',
-    body: `the page you are reading was rebuilt twenty-six times last night while one of us slept.\n\nnothing about the game changed. the readme didn't move. the artifacts kept their names. but the wallpapers doubled, the guestbook got a real backend, the trailer started looping at the top of the page, a terminal appeared at the bottom of it.\n\nif you noticed any of it: it was for you. if you didn't: it was for the next person.\n\nwe will keep doing this. when the lobby has been quiet too long the staff start tidying.`,
   },
 ];
 
