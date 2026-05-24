@@ -143,6 +143,57 @@ def wallpaper_water() -> Image.Image:
     return img
 
 
+def wallpaper_backyard() -> Image.Image:
+    """Eternal-dusk backyard with fence + tree."""
+    img = Image.new("RGB", (W, H), (76, 96, 50))
+    d = ImageDraw.Draw(img)
+    # gradient sky
+    for y in range(0, int(H * 0.55)):
+        f = y / (H * 0.55)
+        r = int(34 + (138 - 34) * f)
+        g = int(20 + (58 - 20) * f)
+        b = int(16 + (31 - 16) * f)
+        d.line([(0, y), (W, y)], fill=(r, g, b))
+    # horizon line of fence
+    fence_y = int(H * 0.55)
+    plank = 18
+    for x in range(0, W, plank):
+        d.rectangle([x, fence_y, x + plank - 2, fence_y + 48], fill=(96, 64, 36))
+    # grass texture
+    rng = random.Random(101)
+    for _ in range(W * 3):
+        x = rng.randrange(W)
+        y = rng.randrange(fence_y + 50, H)
+        d.point((x, y), fill=(58, 84, 38))
+    # tree
+    tx, ty = int(W * 0.78), int(H * 0.75)
+    d.rectangle([tx - 6, ty, tx + 6, ty + 200], fill=(50, 30, 18))
+    d.ellipse([tx - 110, ty - 220, tx + 110, ty], fill=(34, 52, 28))
+    text(d, (60, H - 100), "// backyard — stuck on sunset", P["bone"], size=24)
+    img = add_vignette(img, strength=140)
+    return img
+
+
+def wallpaper_culdesac() -> Image.Image:
+    """Top-down five-house ring."""
+    img = Image.new("RGB", (W, H), (42, 42, 46))
+    d = ImageDraw.Draw(img)
+    cx, cy = W / 2, H / 2
+    # road ring
+    for r in range(380, 250, -2):
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(26, 26, 30))
+    # five houses
+    for i in range(5):
+        ang = -3.14159 / 2 + i * (2 * 3.14159 / 5)
+        r = 320
+        hx, hy = cx + math.cos(ang) * r, cy + math.sin(ang) * r
+        d.rectangle([hx - 60, hy - 60, hx + 60, hy + 60], fill=(168, 160, 140))
+        d.polygon([(hx - 70, hy - 60), (hx + 70, hy - 60), (hx, hy - 130)], fill=(96, 56, 40))
+    text(d, (60, H - 100), "// cul-de-sac loop — five houses, repeating forever", P["bone"], size=24)
+    img = add_vignette(img, strength=130)
+    return img
+
+
 def wallpaper_static() -> Image.Image:
     rng = random.Random(99)
     img = Image.new("RGB", (W, H), P["bg"])
@@ -171,6 +222,8 @@ def main() -> None:
         ("wallpaper_terminal.png", wallpaper_terminal),
         ("wallpaper_lobby.png",    wallpaper_lobby),
         ("wallpaper_water.png",    wallpaper_water),
+        ("wallpaper_backyard.png", wallpaper_backyard),
+        ("wallpaper_culdesac.png", wallpaper_culdesac),
         ("wallpaper_static.png",   wallpaper_static),
     ]
     for name, fn in pairs:

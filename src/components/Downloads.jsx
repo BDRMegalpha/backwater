@@ -10,6 +10,8 @@ const ITEMS = [
   { name: 'wallpaper / terminal', href: '/wallpaper_terminal.png',  note: '1920×1080' },
   { name: 'wallpaper / lobby',    href: '/wallpaper_lobby.png',     note: '1920×1080' },
   { name: 'wallpaper / water',    href: '/wallpaper_water.png',     note: '1920×1080' },
+  { name: 'wallpaper / backyard', href: '/wallpaper_backyard.png',  note: '1920×1080' },
+  { name: 'wallpaper / cul-de-sac',href:'/wallpaper_culdesac.png',  note: '1920×1080' },
   { name: 'wallpaper / static',   href: '/wallpaper_static.png',    note: '1920×1080' },
   { name: 'og card',              href: '/og.svg',                  note: '1200×630'  },
   { name: 'favicon',              href: '/favicon.svg',             note: '32×32 svg' },
