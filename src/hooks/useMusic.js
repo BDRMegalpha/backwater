@@ -4,7 +4,6 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 // a sub bass that follows. ~16s per cycle. No samples; pure WebAudio.
 
 const PROG = [
-  // [root, third, fifth] in Hz, low octave
   [110.0, 130.81, 164.81], // A minor
   [146.83, 174.61, 220.0], // D minor
   [98.0,  116.54, 146.83], // G major
@@ -18,6 +17,7 @@ export function useMusic() {
   const ctxRef = useRef(null);
   const masterRef = useRef(null);
   const loopRef = useRef(null);
+  const runningRef = useRef(false);
 
   const ensureCtx = useCallback(() => {
     if (ctxRef.current) return ctxRef.current;
@@ -26,7 +26,6 @@ export function useMusic() {
     const ctx = new AC();
     const master = ctx.createGain();
     master.gain.value = 0;
-    // gentle lowpass to keep it dreamy
     const filter = ctx.createBiquadFilter();
     filter.type = 'lowpass';
     filter.frequency.value = 1400;
@@ -40,7 +39,8 @@ export function useMusic() {
   const start = useCallback(() => {
     const ctx = ensureCtx();
     if (!ctx) return;
-    if (loopRef.current) return;
+    if (runningRef.current) return;
+    runningRef.current = true;
     if (ctx.state === 'suspended') ctx.resume();
 
     const master = masterRef.current;
@@ -49,10 +49,10 @@ export function useMusic() {
 
     let i = 0;
     function playStep() {
+      // Guard against playStep firing after stop() — would leak oscillators.
+      if (!runningRef.current) return;
       const now = ctx.currentTime;
       const chord = PROG[i % PROG.length];
-      // pad: 3 detuned sines per note, slight chorus
-      const sources = [];
       chord.forEach((f, idx) => {
         [-3, 0, 3].forEach((cents) => {
           const o = ctx.createOscillator();
@@ -65,10 +65,8 @@ export function useMusic() {
           g.gain.linearRampToValueAtTime(0.0001, now + STEP_SEC - 0.05);
           o.connect(g); g.connect(master);
           o.start(now); o.stop(now + STEP_SEC);
-          sources.push(o);
         });
       });
-      // sub bass on the root
       {
         const sub = ctx.createOscillator();
         sub.type = 'triangle';
@@ -87,6 +85,7 @@ export function useMusic() {
   }, [ensureCtx]);
 
   const stop = useCallback(() => {
+    runningRef.current = false;
     const ctx = ctxRef.current;
     if (!ctx) return;
     if (loopRef.current) {
@@ -105,7 +104,10 @@ export function useMusic() {
   useEffect(() => {
     if (enabled) start();
     else stop();
-    return () => { if (loopRef.current) clearTimeout(loopRef.current); };
+    return () => {
+      runningRef.current = false;
+      if (loopRef.current) clearTimeout(loopRef.current);
+    };
   }, [enabled, start, stop]);
 
   const toggle = useCallback(() => setEnabled((v) => !v), []);
