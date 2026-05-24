@@ -7,6 +7,7 @@ import { useHiddenRoute } from './hooks/useHiddenRoute';
 import { NotFound } from './components/NotFound';
 import { ParticleField } from './components/ParticleField';
 import { MouseTrail } from './components/MouseTrail';
+import { Presence } from './components/Presence';
 import { Nav } from './components/Nav';
 import { Boot } from './components/Boot';
 import { Hero } from './components/Hero';
@@ -106,7 +107,10 @@ export default function App() {
       {/* fake browser chrome */}
       <div className="border-b border-bw-dim/30 px-3 py-1 text-[11px] text-bw-dim font-mono flex justify-between items-center gap-3">
         <span className="truncate">file://localhost/backwater{typeof window !== 'undefined' ? window.location.pathname : '/index.html'}</span>
-        <span className="hidden md:inline">internet explorer 6 — offline</span>
+        <span className="hidden md:flex items-center gap-3">
+          <Presence />
+          <span>internet explorer 6 — offline</span>
+        </span>
         <AudioToggle enabled={enabled} onToggle={toggle} musicEnabled={music.enabled} onMusicToggle={music.toggle} />
       </div>
 
