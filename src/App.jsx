@@ -8,6 +8,7 @@ import { NotFound } from './components/NotFound';
 import { ParticleField } from './components/ParticleField';
 import { MouseTrail } from './components/MouseTrail';
 import { Presence } from './components/Presence';
+import { PresenceSparkline } from './components/PresenceSparkline';
 import { Shortcuts } from './components/Shortcuts';
 import { SessionLog } from './components/SessionLog';
 import { Archive } from './components/Archive';
@@ -114,6 +115,7 @@ export default function App() {
         <span className="truncate">file://localhost/backwater{typeof window !== 'undefined' ? window.location.pathname : '/index.html'}</span>
         <span className="hidden md:flex items-center gap-3">
           <Presence />
+          <PresenceSparkline />
           <span>internet explorer 6 — offline</span>
         </span>
         <AudioToggle enabled={enabled} onToggle={toggle} musicEnabled={music.enabled} onMusicToggle={music.toggle} />
