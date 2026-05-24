@@ -40,6 +40,7 @@ import { Downloads } from './components/Downloads';
 import { Wallet } from './components/Wallet';
 import { Faq } from './components/Faq';
 import { Press } from './components/Press';
+import { Feedback } from './components/Feedback';
 import { Guestbook } from './components/Guestbook';
 import { Footer } from './components/Footer';
 import { AudioToggle } from './components/AudioToggle';
@@ -150,6 +151,7 @@ export default function App() {
       <Downloads onTone={tone} />
       <Press onTone={tone} />
       <Credits />
+      <Feedback onTone={tone} />
       <Guestbook discover={discover} onTone={tone} />
       <Footer discoveredCount={count} onReset={() => { clear(); setToast('discoveries erased. the lobby will not remember you.'); }} />
 

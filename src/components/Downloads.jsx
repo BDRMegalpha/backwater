@@ -7,14 +7,17 @@ import { Section } from './Section';
 //   /wallpaper_1920x1080_static.png
 // And the OG / favicon.
 const ITEMS = [
-  { name: 'wallpaper / terminal', href: '/wallpaper_terminal.png',  note: '1920×1080' },
-  { name: 'wallpaper / lobby',    href: '/wallpaper_lobby.png',     note: '1920×1080' },
-  { name: 'wallpaper / water',    href: '/wallpaper_water.png',     note: '1920×1080' },
-  { name: 'wallpaper / backyard', href: '/wallpaper_backyard.png',  note: '1920×1080' },
-  { name: 'wallpaper / cul-de-sac',href:'/wallpaper_culdesac.png',  note: '1920×1080' },
-  { name: 'wallpaper / static',   href: '/wallpaper_static.png',    note: '1920×1080' },
-  { name: 'og card',              href: '/og.svg',                  note: '1200×630'  },
-  { name: 'favicon',              href: '/favicon.svg',             note: '32×32 svg' },
+  { name: 'wallpaper / terminal',     href: '/wallpaper_terminal.png',     note: '1920×1080' },
+  { name: 'wallpaper / lobby 2009',   href: '/wallpaper_lobby.png',        note: '1920×1080' },
+  { name: 'wallpaper / liminal pool', href: '/wallpaper_liminalpool.png',  note: '1920×1080' },
+  { name: 'wallpaper / big box',      href: '/wallpaper_bigbox.png',       note: '1920×1080' },
+  { name: 'wallpaper / backyard',     href: '/wallpaper_backyard.png',     note: '1920×1080' },
+  { name: 'wallpaper / cul-de-sac',   href: '/wallpaper_culdesac.png',     note: '1920×1080' },
+  { name: 'wallpaper / server room',  href: '/wallpaper_serverroom.png',   note: '1920×1080' },
+  { name: 'wallpaper / undersea',     href: '/wallpaper_water.png',        note: '1920×1080' },
+  { name: 'wallpaper / no signal',    href: '/wallpaper_static.png',       note: '1920×1080' },
+  { name: 'og card',                  href: '/og.svg',                     note: '1200×630'  },
+  { name: 'favicon',                  href: '/favicon.svg',                note: '32×32 svg' },
 ];
 
 export function Downloads({ onTone }) {

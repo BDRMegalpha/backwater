@@ -28,6 +28,7 @@ const ITEMS = [
   ['downloads',    'dl'],
   ['press',        'press'],
   ['credits',      'credits'],
+  ['feedback',     'feedback'],
   ['guestbook',    'guestbook'],
 ];
 

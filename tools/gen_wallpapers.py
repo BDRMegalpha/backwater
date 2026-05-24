@@ -194,6 +194,84 @@ def wallpaper_culdesac() -> Image.Image:
     return img
 
 
+def wallpaper_bigbox() -> Image.Image:
+    """Walmart aisles at night, no shoppers, slowed music."""
+    img = Image.new("RGB", (W, H), (24, 24, 28))
+    d = ImageDraw.Draw(img)
+    horizon = int(H * 0.5)
+    d.rectangle([0, horizon, W, H], fill=(48, 48, 52))
+    cx = W / 2
+    for x in range(0, W, 80):
+        d.line([(x, H), (cx, horizon)], fill=(70, 70, 74), width=1)
+    for shelf_i in range(-3, 4):
+        x = int(cx + shelf_i * 110)
+        d.line([(x, H), (cx + shelf_i * 18, horizon)], fill=(110, 80, 50), width=2)
+        for y_frac in (0.55, 0.62, 0.7, 0.78):
+            y = int(horizon + (H - horizon) * (y_frac - 0.5) * 2)
+            x_near = int(cx + shelf_i * 110)
+            x_far = int(cx + shelf_i * 18 + (110 - 18) * (1 - (y_frac - 0.5) * 2))
+            d.line([(x_near, y), (x_far, y)], fill=(70, 50, 30), width=1)
+    for y in range(0, horizon, 16):
+        d.line([(0, y), (W, y)], fill=(34, 34, 38))
+    d.rectangle([cx - 90, 30, cx + 90, 50], fill=(220, 220, 200))
+    text(d, (60, 60), "// big box — no shoppers", P["bone"], size=26)
+    text(d, (60, 100), "music: same song. 25% slower.", P["dim"], size=18)
+    img = add_vignette(img, strength=150)
+    return img
+
+
+def wallpaper_serverroom() -> Image.Image:
+    """Rows of racks with blinking LEDs."""
+    img = Image.new("RGB", (W, H), (12, 14, 18))
+    d = ImageDraw.Draw(img)
+    d.rectangle([0, int(H * 0.6), W, H], fill=(34, 38, 42))
+    rng = random.Random(73)
+    for col in range(8):
+        for row in range(3):
+            x = 80 + col * 220
+            y = int(H * 0.18) + row * 240
+            d.rectangle([x, y, x + 160, y + 200], fill=(20, 22, 26), outline=(58, 60, 64))
+            for slot in range(10):
+                sy = y + 10 + slot * 18
+                d.rectangle([x + 10, sy, x + 150, sy + 12], fill=(10, 12, 14))
+                for li in range(3):
+                    if rng.random() < 0.6:
+                        c = (111, 138, 58) if rng.random() < 0.7 else (138, 58, 31)
+                        d.rectangle([x + 12 + li * 6, sy + 4, x + 16 + li * 6, sy + 8], fill=c)
+    text(d, (60, H - 90), "// server room — the game knows it's a game", P["bone"], size=24)
+    img = add_scanlines(img, opacity=12)
+    img = add_vignette(img, strength=140)
+    return img
+
+
+def wallpaper_liminalpool() -> Image.Image:
+    """Empty natatorium, half-flooded, fluorescent buzz."""
+    img = Image.new("RGB", (W, H), (186, 188, 188))
+    d = ImageDraw.Draw(img)
+    d.rectangle([0, 0, W, int(H * 0.28)], fill=(214, 214, 208))
+    d.rectangle([0, int(H * 0.28), W, int(H * 0.42)], fill=(200, 200, 196))
+    pool_top = int(H * 0.42)
+    pool_bot = H
+    d.rectangle([0, pool_top, W, pool_top + 8], fill=(160, 160, 156))
+    for y in range(pool_top + 8, pool_bot):
+        f = (y - pool_top - 8) / (pool_bot - pool_top - 8)
+        r = int(94 + (40 - 94) * f)
+        g = int(130 - 130 * f * 0.3)
+        b = int(144 - 60 * f * 0.5)
+        d.line([(0, y), (W, y)], fill=(r, max(0, g), max(0, b)))
+    rng = random.Random(13)
+    for y in range(pool_top + 12, pool_bot, 8):
+        for x in range(0, W, 18):
+            if rng.random() < 0.18:
+                d.line([(x, y), (x + 8, y)], fill=(160, 180, 190))
+    for i in range(5):
+        x = 120 + i * 360
+        d.rectangle([x, 20, x + 200, 32], fill=(230, 230, 210))
+    text(d, (60, 60), "// liminal pool — fluorescent buzz, half-flooded", P["dim"], size=22)
+    img = add_vignette(img, strength=130)
+    return img
+
+
 def wallpaper_static() -> Image.Image:
     rng = random.Random(99)
     img = Image.new("RGB", (W, H), P["bg"])
@@ -224,6 +302,9 @@ def main() -> None:
         ("wallpaper_water.png",    wallpaper_water),
         ("wallpaper_backyard.png", wallpaper_backyard),
         ("wallpaper_culdesac.png", wallpaper_culdesac),
+        ("wallpaper_bigbox.png",   wallpaper_bigbox),
+        ("wallpaper_serverroom.png", wallpaper_serverroom),
+        ("wallpaper_liminalpool.png", wallpaper_liminalpool),
         ("wallpaper_static.png",   wallpaper_static),
     ]
     for name, fn in pairs:
