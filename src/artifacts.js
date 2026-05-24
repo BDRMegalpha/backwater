@@ -424,6 +424,89 @@ export const PRESS = {
   ],
 };
 
+// Fake live stats. The numbers drift inside fixed bounds.
+export const STATS = [
+  { id: 'peak',     label: 'peak concurrent (alleged)',  value: '1247',  tone: 'bone' },
+  { id: 'queue',    label: 'lobbies open (right now)',   value: '03',    tone: 'sick' },
+  { id: 'avg_ttk',  label: 'average TTK (memoryhold)',   value: '0.42s', tone: 'rust' },
+  { id: 'avg_match',label: 'average 1v1 match length',   value: '4:13',  tone: 'bone' },
+  { id: 'echoes',   label: 'total echoes minted',        value: '∞',     tone: 'dim'  },
+  { id: 'signal',   label: 'broadcast signal',           value: 'weak',  tone: 'rust' },
+];
+
+// Extended artifact dossiers. Cross-references the official 8.
+// Each entry is paired by id with ARTIFACTS for the field guide page.
+export const FIELD_GUIDE = {
+  stutter: {
+    classifier: 'Class A / temporal',
+    discovered: '02/14/2008 — recovered from a non-compiling build of place_id 03128841',
+    sightings: 7,
+    pairings: ['choir', 'longhand'],
+    warning: 'do not use indoors. the fourth shot does not respect ceilings.',
+  },
+  mourner: {
+    classifier: 'Class A / area',
+    discovered: '11/02/2008 — found floating in the round room of the lobby. did not despawn.',
+    sightings: 18,
+    pairings: ['witness'],
+    warning: 'the slow trail also slows your teammate. it does not check.',
+  },
+  choir: {
+    classifier: 'Class B / area',
+    discovered: '03/19/2009 — heard before it was seen. seen 11 seconds later.',
+    sightings: 4,
+    pairings: ['stutter'],
+    warning: 'voices include yours. do not respond to them.',
+  },
+  threadripper: {
+    classifier: 'Class C / kinetic',
+    discovered: '01/06/2009 — recovered from a hole that should not exist in cliffside-3',
+    sightings: 12,
+    pairings: ['bloomgun'],
+    warning: 'the unspooled wall is walkable by everything, not just you.',
+  },
+  bloomgun: {
+    classifier: 'Class D / organic',
+    discovered: '07/22/2009 — appeared after a player typed "i wish there was a garden mode"',
+    sightings: 41,
+    pairings: ['threadripper'],
+    warning: 'one log entry ends mid-sentence. caretaker_b stopped responding to pings.',
+  },
+  witness: {
+    classifier: 'Class B / recon',
+    discovered: '02/30/2009 — date is intentional',
+    sightings: 9,
+    pairings: ['mourner'],
+    warning: 'never aim at a teammate. it does not forget faces.',
+  },
+  longhand: {
+    classifier: 'Class C / reach',
+    discovered: '08/01/2009 — recovered from the attic. nobody put it there.',
+    sightings: 16,
+    pairings: ['stutter'],
+    warning: 'no animation. the screen flash is the kill confirmation.',
+  },
+  reliquary: {
+    classifier: 'Class A / utility',
+    discovered: '04/11/2009 — found in the inventory of a player who had never logged on',
+    sightings: 2,
+    pairings: [],
+    warning: 'the stored death does not expire. it waits.',
+  },
+};
+
+// Credits scroll. Real names + in-character "departments."
+export const CREDITS = [
+  { role: 'design',                names: ['liam', 'bennett (BDRMega)'] },
+  { role: 'programming',           names: ['bennett (BDRMega)'] },
+  { role: 'art direction',         names: ['liam'] },
+  { role: 'audio',                 names: ['the lobby itself', 'lol_who (deleted)'] },
+  { role: 'qa',                    names: ['caretaker_b (missing)', 'broadcast.tower'] },
+  { role: 'community',             names: ['crayonmaiden', 'mrk_03', '404_meridian', 'kayla.404'] },
+  { role: 'special thanks',        names: ['everyone who typed memoryhold while reading this'] },
+  { role: 'memorial',              names: ['the rooms that didn’t make it'] },
+];
+
 // Roadmap entries. In-character broadcasts, vague-on-purpose.
 export const ROADMAP = [
   {

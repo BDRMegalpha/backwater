@@ -5,6 +5,7 @@ const ITEMS = [
   ['modes',        'modes'],
   ['loadout',      'loadout'],
   ['artifacts',    'artifacts'],
+  ['fieldguide',   'guide'],
   ['map',          'map'],
   ['transmissions','txns'],
   ['devlog',       'devlog'],
@@ -12,11 +13,13 @@ const ITEMS = [
   ['reaction',     'react'],
   ['chat',         'chat'],
   ['sounds',       'snd'],
+  ['stats',        'stats'],
   ['roadmap',      'roadmap'],
   ['wallet',       'echoes'],
   ['faq',          'faq'],
   ['downloads',    'dl'],
   ['press',        'press'],
+  ['credits',      'credits'],
   ['guestbook',    'guestbook'],
 ];
 
