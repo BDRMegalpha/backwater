@@ -457,8 +457,9 @@ export const PRESS = {
   byline: 'developed by liam and bennett (BDRMega).',
   contact: 'contact: bennett.racich@gmail.com',
   links: [
-    { label: 'site',        href: 'https://backwater.web.app' },
-    { label: 'youtube',     href: 'https://youtube.com/@BDRMega' },
+    { label: 'site',           href: 'https://backwater.web.app' },
+    { label: 'source (site)',  href: 'https://github.com/BDRMegalpha/backwater' },
+    { label: 'youtube',        href: 'https://youtube.com/@BDRMega' },
   ],
 };
 
