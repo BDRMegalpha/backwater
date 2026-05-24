@@ -678,6 +678,34 @@ export const ARCHIVE = [
     when: '11/04/2009',
     body: `echoes are not a currency. they are an audit log of what you've done in the game written in a way you can spend on cosmetics.\n\none echo per match completed, regardless of placement. one extra echo per artifact picked up (not per kill made with one). bonus echoes for the discovery rewards we haven't announced yet.\n\nyou cannot buy echoes. you cannot trade echoes. you cannot give echoes. if you delete your account, the echoes stay in the database, attached to a username nobody can log into. we are not going to clean that database.`,
   },
+  {
+    id: 'a7',
+    title: 'on no ranked',
+    by: 'liam',
+    when: '10/2009',
+    body: `we will not be adding ranked. people will ask. we will say no.\n\nranked games optimize for the ladder; the ladder optimizes for whichever strategy is currently strongest; the playerbase converges on that strategy; the variance that made matches feel weird is gone.\n\nbackwater needs the variance. the artifacts are designed around it. an artifact that you might or might not grab is a different game from an artifact you always grab because grabbing it is rank-optimal.\n\nmatchmaking will be soft. it will try to give you fair fights. it will not score you. you will play because the next match might be the one with the choir on rooftop.\n\n— l`,
+  },
+  {
+    id: 'a8',
+    title: 'on the second self',
+    by: 'crayonmaiden',
+    when: '11/2009',
+    body: `the second self isn't a decoy. it's an alibi.\n\nyou pick it up. for the next ten seconds, the game thinks two of you exist. your second self mimics your last second of movement. if you shoot your second self, it bleeds. if it shoots, it shoots blanks.\n\nthe enemy sees both of you. if they kill the wrong one, you don't get a kill back — they took it from a copy of you that never had the gun.\n\nthe weird part: sometimes the second self does something you didn't do. crouches when you didn't crouch. waves when you didn't wave. the dev forum is full of clips of this. nobody from the studio has commented.`,
+  },
+  {
+    id: 'a9',
+    title: 'the wall that fixed itself',
+    by: '[redacted]',
+    when: '10/2█/2009',
+    body: `during build 0.0.5a there was a wall in the lobby's round room that occasionally became walkable. you could clip into it for about 0.4 seconds before it remembered it was solid.\n\nwe pushed a patch. the patch removed the wall entirely, replaced it with a doorway.\n\nthe wall came back the next day.\n\nwe rolled back the patch. the doorway stayed. we now have both.\n\nthe wall and the doorway are not adjacent. they are not in the same room. they were the same wall.`,
+  },
+  {
+    id: 'a10',
+    title: 'overnight commits',
+    by: 'admin@backwater',
+    when: '05/24/2026',
+    body: `the page you are reading was rebuilt twenty-six times last night while one of us slept.\n\nnothing about the game changed. the readme didn't move. the artifacts kept their names. but the wallpapers doubled, the guestbook got a real backend, the trailer started looping at the top of the page, a terminal appeared at the bottom of it.\n\nif you noticed any of it: it was for you. if you didn't: it was for the next person.\n\nwe will keep doing this. when the lobby has been quiet too long the staff start tidying.`,
+  },
 ];
 
 // Boot-sequence lines. Shown one at a time.
