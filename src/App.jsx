@@ -19,6 +19,7 @@ import { Modes } from './components/Modes';
 import { Loadout } from './components/Loadout';
 import { Artifacts } from './components/Artifacts';
 import { Map } from './components/Map';
+import { MapVote } from './components/MapVote';
 import { Maps } from './components/Maps';
 import { Trailer } from './components/Trailer';
 import { Transmissions } from './components/Transmissions';
@@ -135,6 +136,7 @@ export default function App() {
       <FieldGuide onTone={tone} />
       <Powerups />
       <Maps onTone={tone} />
+      <MapVote onTone={tone} />
       <LoadoutBuilder onTone={tone} />
       <AimTest onTone={tone} />
       <Reaction onTone={tone} />

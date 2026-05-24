@@ -9,6 +9,7 @@ const ITEMS = [
   ['fieldguide',   'guide'],
   ['powerups',     'power'],
   ['maps',         'maps'],
+  ['mapvote',      'vote'],
   ['builder',      'build'],
   ['transmissions','txns'],
   ['archive',      'archive'],
