@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const ITEMS = [
+  ['trailer',      'trailer'],
   ['readme',       'readme'],
   ['modes',        'modes'],
   ['loadout',      'loadout'],
@@ -9,7 +10,6 @@ const ITEMS = [
   ['powerups',     'power'],
   ['maps',         'maps'],
   ['builder',      'build'],
-  ['map',          'gmap'],
   ['transmissions','txns'],
   ['devlog',       'devlog'],
   ['aimtest',      'aim'],

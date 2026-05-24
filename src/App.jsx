@@ -16,6 +16,7 @@ import { Loadout } from './components/Loadout';
 import { Artifacts } from './components/Artifacts';
 import { Map } from './components/Map';
 import { Maps } from './components/Maps';
+import { Trailer } from './components/Trailer';
 import { Transmissions } from './components/Transmissions';
 import { Devlog } from './components/Devlog';
 import { AimTest } from './components/AimTest';
@@ -112,6 +113,7 @@ export default function App() {
       <Nav discoveredCount={count} onTone={tone} />
 
       <Hero onTone={tone} />
+      <Trailer />
       <Readme />
       <Modes onTone={tone} />
       <Loadout onTone={tone} />
