@@ -22,6 +22,7 @@ const ITEMS = [
   ['stats',        'stats'],
   ['roadmap',      'roadmap'],
   ['wallet',       'echoes'],
+  ['sessionlog',   'save'],
   ['faq',          'faq'],
   ['downloads',    'dl'],
   ['press',        'press'],

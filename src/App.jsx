@@ -8,6 +8,8 @@ import { NotFound } from './components/NotFound';
 import { ParticleField } from './components/ParticleField';
 import { MouseTrail } from './components/MouseTrail';
 import { Presence } from './components/Presence';
+import { Shortcuts } from './components/Shortcuts';
+import { SessionLog } from './components/SessionLog';
 import { Nav } from './components/Nav';
 import { Boot } from './components/Boot';
 import { Hero } from './components/Hero';
@@ -141,6 +143,7 @@ export default function App() {
       <Stats />
       <Roadmap />
       <Wallet discoveredCount={count} onTone={tone} />
+      <SessionLog discoveredCount={count} />
       <Faq onTone={tone} />
       <Downloads onTone={tone} />
       <Press onTone={tone} />
@@ -149,6 +152,7 @@ export default function App() {
       <Footer discoveredCount={count} onReset={() => { clear(); setToast('discoveries erased. the lobby will not remember you.'); }} />
 
       <Toast message={toast} onDone={() => setToast('')} />
+      <Shortcuts />
     </div>
   );
 }
