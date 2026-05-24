@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { NavSearch } from './NavSearch';
 
 // Grouped nav: same flat anchor list, but separated by category. The
 // labels themselves render flat — the groups insert thin vertical
@@ -71,9 +72,12 @@ export function Nav({ discoveredCount, onTone }) {
             </li>
           ))}
         </ul>
-        <span className="text-bw-dim whitespace-nowrap" title="things you have discovered">
-          found: <span className="text-bw-bone">{String(discoveredCount).padStart(2, '0')}</span>
-        </span>
+        <div className="flex items-center gap-3 whitespace-nowrap">
+          <NavSearch />
+          <span className="text-bw-dim" title="things you have discovered">
+            found: <span className="text-bw-bone">{String(discoveredCount).padStart(2, '0')}</span>
+          </span>
+        </div>
       </div>
     </nav>
   );

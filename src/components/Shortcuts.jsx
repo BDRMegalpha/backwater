@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 // Press ? (shift+/) to open. Esc closes. Lists the in-page tricks.
 const ROWS = [
   { keys: '?',          desc: 'open this help' },
-  { keys: 'Esc',        desc: 'close this help' },
+  { keys: '/',          desc: 'focus the nav search' },
+  { keys: 'Esc',        desc: 'close this help (or unfocus search)' },
   { keys: '↑↑↓↓←→←→ B A', desc: 'konami code — unlock the Parley artifact' },
   { keys: 'type "memoryhold"', desc: 'wake an artifact rumor' },
   { keys: 'type "echoes"',     desc: 'reveal the balance hint' },
