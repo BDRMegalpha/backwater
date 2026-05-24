@@ -15,6 +15,7 @@ import { Modes } from './components/Modes';
 import { Loadout } from './components/Loadout';
 import { Artifacts } from './components/Artifacts';
 import { Map } from './components/Map';
+import { Maps } from './components/Maps';
 import { Transmissions } from './components/Transmissions';
 import { Devlog } from './components/Devlog';
 import { AimTest } from './components/AimTest';
@@ -120,6 +121,7 @@ export default function App() {
       <Devlog discovered={discovered} discover={discover} onTone={tone} />
       <FieldGuide onTone={tone} />
       <Powerups />
+      <Maps onTone={tone} />
       <LoadoutBuilder onTone={tone} />
       <AimTest onTone={tone} />
       <Reaction onTone={tone} />

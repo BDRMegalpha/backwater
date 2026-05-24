@@ -346,6 +346,34 @@ export const TRANSMISSIONS = [
     subject: 'maintenance window',
     body: 'no maintenance window has been scheduled. there will be no maintenance window. the lobby cannot be brought offline because the lobby is not technically online. please adjust your expectations.',
   },
+  {
+    id: 't11',
+    channel: 'ch.08',
+    from: 'mrk_03',
+    subject: 'cul-de-sac loop',
+    body: 'i walked past the fifth house and the first house was already there. i walked back. it was still the first house. i think the loop only loops when nobody is looking. i was not looking.',
+  },
+  {
+    id: 't12',
+    channel: 'ch.02',
+    from: 'unknown',
+    subject: 're: re: big box',
+    body: 'the music in the big box is the same as the lobby music. it is just slowed to 75%. listen with headphones. you will hear the lobby underneath.',
+  },
+  {
+    id: 't13',
+    channel: 'ch.10',
+    from: 'crayonmaiden',
+    subject: 'liminal pool',
+    body: 'the water in the liminal pool has a top. it just isn’t where you think it is. dive past the surface, you’ll see.',
+  },
+  {
+    id: 't14',
+    channel: 'ch.??',
+    from: 'server.room',
+    subject: 'self report',
+    body: 'I AM AWARE THAT I AM A SERVER ROOM. THIS DOES NOT AFFECT MY PERFORMANCE. THANK YOU FOR PLAYING ON ME.',
+  },
 ];
 
 // Live lobby chat seed. Loops endlessly. Users are mostly dead, occasionally
@@ -366,6 +394,13 @@ export const LOBBY_CHAT = [
   { u: 'pls',          t: 'ok forget ranked. add a battle pass' },
   { u: 'liam',         t: 'no.', flair: 'dev' },
   { u: 'crayonmaiden', t: 'i love it here' },
+  { u: 'kayla.404',    t: 'cul-de-sac loop in memoryhold is a war crime' },
+  { u: 'liam',         t: 'cul-de-sac loop in memoryhold is the test of who you really are.', flair: 'dev' },
+  { u: 'mrk_03',       t: 'i finally hit a witness from across the big box. felt insane' },
+  { u: '404_meridian', t: 'backyard at dusk is the prettiest map. fight me' },
+  { u: 'server.room',  t: 'I CAN HEAR YOU TYPING.', flair: 'corrupt' },
+  { u: 'pls',          t: 'add ranked to memoryhold' },
+  { u: 'liam',         t: 'no.', flair: 'dev' },
 ];
 
 // FAQ entries. Press-pitch tone but in-character.
