@@ -15,6 +15,7 @@ const ITEMS = [
   ['aimtest',      'aim'],
   ['reaction',     'react'],
   ['memory',       'mem'],
+  ['typing',       'type'],
   ['chat',         'chat'],
   ['sounds',       'snd'],
   ['stats',        'stats'],
