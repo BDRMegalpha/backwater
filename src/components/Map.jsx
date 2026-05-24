@@ -2,30 +2,30 @@ import { useState } from 'react';
 import { Section } from './Section';
 import { SECTORS } from '../artifacts';
 
-// ASCII map with embedded "hot" spans the user can hover for sector info.
-// Each marker character is an anchor for a sector id.
+// ASCII "server graveyard" map. The maps in The Backwater are seeded — these
+// are the six known themes from the design doc. Each label is hover-able.
 const MAP = [
   '   ┌────────────────────────────────────────────┐',
-  '   │   ◢ ATTIC  · · · · · · · · · · · · · · ·   │',
-  '   │            · · · · · · · · · · · · · · ·   │',
-  '   │  ☰ CLIFFSIDE   · · · · · · · ◭ BROADCAST   │',
-  '   │  ☰ ☰ ☰          · · · · · ·                │',
-  '   │  ☰ ☰   · · · · ◯ GLASSYARD · · ·           │',
-  '   │        · · · · · · · · · · · · · · · · ·   │',
-  '   │  ▢ OLD LOBBY · · · · · · · · · · · · ·     │',
-  '   │  ▢ ▢ ▢          · · · · · · · · · · ·      │',
-  '   │                       ≈ UNDERSEA  ≈ ≈      │',
-  '   │  N · E · S · W                ≈ ≈ ≈ ≈      │',
+  '   │  ▢ LOBBY 2009 · · · · · ≈ LIMINAL POOL ≈   │',
+  '   │  ▢ ▢ ▢            · · · ≈ ≈ ≈              │',
+  '   │  ▢                · · · ≈ ≈                │',
+  '   │  · · · · · · · · · · · · · · · · · · · ·   │',
+  '   │  ☰ SERVER ROOM    · · · ◢ BIG BOX          │',
+  '   │  ☰ ☰ ☰            · · · ◢ ◢ ◢              │',
+  '   │  · · · · · · · · · · · · · · · · · · · ·   │',
+  '   │  ◭ BACKYARD       · · · ◯ CUL-DE-SAC LOOP  │',
+  '   │  ◭ ◭              · · · ◯ ◯                │',
+  '   │  N · E · S · W                             │',
   '   └────────────────────────────────────────────┘',
 ];
 
 const HOTS = [
-  { id: 'attic',     match: 'ATTIC' },
-  { id: 'cliffside', match: 'CLIFFSIDE' },
-  { id: 'broadcast', match: 'BROADCAST' },
-  { id: 'glassyard', match: 'GLASSYARD' },
-  { id: 'lobby',     match: 'OLD LOBBY' },
-  { id: 'undersea',  match: 'UNDERSEA' },
+  { id: 'lobby',    match: 'LOBBY 2009' },
+  { id: 'pool',     match: 'LIMINAL POOL' },
+  { id: 'server',   match: 'SERVER ROOM' },
+  { id: 'bigbox',   match: 'BIG BOX' },
+  { id: 'backyard', match: 'BACKYARD' },
+  { id: 'culdesac', match: 'CUL-DE-SAC LOOP' },
 ];
 
 function renderLine(line, active, setActive, onTone) {

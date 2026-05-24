@@ -113,43 +113,44 @@ export const LOADOUT = [
   { name: 'RPG',    tag: 'heavy',   note: 'one. that’s the joke. that’s also the build.' },
 ];
 
-// Sectors of the backwater. Used by the ASCII map.
+// Map themes. These are the six maps the design doc names. The "Backwater"
+// itself isn't a single place; matches spawn one of these. Procedurally seeded.
 export const SECTORS = [
   {
     id: 'lobby',
-    name: 'Old Lobby',
-    coords: 'N-1',
-    desc: 'the first hub. tile floor. the ground sometimes loads as water. nobody drowns.',
+    name: 'Lobby 2009',
+    coords: 'M-1',
+    desc: 'blocky, primary colors, that ambient hum old free models had. you have stood here before.',
   },
   {
-    id: 'cliffside',
-    name: 'Cliffside Servers',
-    coords: 'W-3',
-    desc: 'racks of dead places stacked like books. one is humming. you didn’t plug it in.',
+    id: 'pool',
+    name: 'Liminal Pool',
+    coords: 'M-2',
+    desc: 'empty natatorium. half-flooded floor. fluorescent lights buzzing. you can hear the filter.',
   },
   {
-    id: 'glassyard',
-    name: 'The Glassyard',
-    coords: 'C-0',
-    desc: 'every match leaves a shard. by the third week of beta there will be no walkable floor.',
+    id: 'bigbox',
+    name: 'Big Box',
+    coords: 'M-3',
+    desc: 'walmart-style aisles at night. no shoppers. the music is the same song slowed 25%.',
   },
   {
-    id: 'attic',
-    name: 'Attic',
-    coords: 'N-7',
-    desc: 'where the unused maps go. you can hear the player versions of yourself, faintly, from above.',
+    id: 'backyard',
+    name: 'Backyard',
+    coords: 'M-4',
+    desc: 'wooden fence horizon. stuck on sunset. nobody is mowing the lawn. nobody ever will be.',
   },
   {
-    id: 'undersea',
-    name: 'Undersea Build',
-    coords: 'S-9',
-    desc: 'a place that was never finished. the water has no top.',
+    id: 'culdesac',
+    name: 'Cul-de-sac Loop',
+    coords: 'M-5',
+    desc: 'the same five suburban houses on a dead-end street, repeating forever in both directions.',
   },
   {
-    id: 'broadcast',
-    name: 'Broadcast Tower',
-    coords: 'E-4',
-    desc: 'still transmitting. the signal is the guestbook.',
+    id: 'server',
+    name: 'Server Room',
+    coords: 'M-6',
+    desc: 'server racks. blinking lights. the game kind of knows it’s a game in here.',
   },
 ];
 
@@ -434,66 +435,101 @@ export const STATS = [
   { id: 'signal',   label: 'broadcast signal',           value: 'weak',  tone: 'rust' },
 ];
 
-// Extended artifact dossiers. Cross-references the official 8.
-// Each entry is paired by id with ARTIFACTS for the field guide page.
+// Extended artifact dossiers. Mechanics are from the actual design doc;
+// the warning/lore lines stay in the site's voice.
 export const FIELD_GUIDE = {
   stutter: {
-    classifier: 'Class A / temporal',
+    classifier: 'Class A / temporal — SMG',
     discovered: '02/14/2008 — recovered from a non-compiling build of place_id 03128841',
     sightings: 7,
     pairings: ['choir', 'longhand'],
-    warning: 'do not use indoors. the fourth shot does not respect ceilings.',
+    mechanic: 'bullets hit where the target WAS 0.25s ago. lead in reverse — if they strafe right, aim left.',
+    uses: '1 magazine.',
+    warning: 'the fourth shot does not respect ceilings.',
   },
   mourner: {
-    classifier: 'Class A / area',
+    classifier: 'Class A / area — Sniper',
     discovered: '11/02/2008 — found floating in the round room of the lobby. did not despawn.',
     sightings: 18,
     pairings: ['witness'],
+    mechanic: 'hold the trigger to lock a red dot on a target. release to fire. 1s later a beam drops on wherever they are. only LoS break before the second ends saves them.',
+    uses: '1 magazine.',
     warning: 'the slow trail also slows your teammate. it does not check.',
   },
   choir: {
-    classifier: 'Class B / area',
+    classifier: 'Class B / area — Shotgun',
     discovered: '03/19/2009 — heard before it was seen. seen 11 seconds later.',
     sightings: 4,
     pairings: ['stutter'],
+    mechanic: 'invisible sound-wave pellets. passes through one wall. loud enough that good players hear it coming and dive.',
+    uses: '1 magazine.',
     warning: 'voices include yours. do not respond to them.',
   },
   threadripper: {
-    classifier: 'Class C / kinetic',
-    discovered: '01/06/2009 — recovered from a hole that should not exist in cliffside-3',
+    classifier: 'Class C / kinetic — AR',
+    discovered: '01/06/2009 — recovered from a hole that should not exist in the server room',
     sightings: 12,
     pairings: ['bloomgun'],
-    warning: 'the unspooled wall is walkable by everything, not just you.',
+    mechanic: 'every bullet leaves a glowing red thread for 5s along its path. walking through one damages. you are immune to your own.',
+    uses: '1 magazine.',
+    warning: 'a hallway you sprayed is a hallway you cannot easily un-spray.',
   },
   bloomgun: {
-    classifier: 'Class D / organic',
+    classifier: 'Class D / organic — Slow rifle',
     discovered: '07/22/2009 — appeared after a player typed "i wish there was a garden mode"',
     sightings: 41,
     pairings: ['threadripper'],
+    mechanic: 'wherever your bullet lands, a flower grows. 2s later, it explodes in a small radius. plant on cover or escape routes.',
+    uses: '1 magazine.',
     warning: 'one log entry ends mid-sentence. caretaker_b stopped responding to pings.',
   },
   witness: {
-    classifier: 'Class B / recon',
+    classifier: 'Class B / recon — Polaroid',
     discovered: '02/30/2009 — date is intentional',
     sightings: 9,
     pairings: ['mourner'],
+    mechanic: 'aim like a gun. click takes a photo. damage scales with how visible they were — full body = max, head peeking = minimal, behind cover = nothing. useless up close.',
+    uses: '5 photos.',
     warning: 'never aim at a teammate. it does not forget faces.',
   },
   longhand: {
-    classifier: 'Class C / reach',
-    discovered: '08/01/2009 — recovered from the attic. nobody put it there.',
+    classifier: 'Class C / reach — Melee',
+    discovered: '08/01/2009 — recovered from a folder that should not exist',
     sightings: 16,
     pairings: ['stutter'],
+    mechanic: 'a hand on a 30-stud stretchable arm. hits an enemy → yank them in for a melee kill. hits a wall → you pull yourself there (grapple).',
+    uses: '5 throws.',
     warning: 'no animation. the screen flash is the kill confirmation.',
   },
   reliquary: {
-    classifier: 'Class A / utility',
+    classifier: 'Class A / utility — Pistol',
     discovered: '04/11/2009 — found in the inventory of a player who had never logged on',
     sightings: 2,
     pairings: [],
-    warning: 'the stored death does not expire. it waits.',
+    mechanic: 'infinite ammo, no reload. every shot causes a random nearby map object to disappear. delete enemy cover. delete your own by accident.',
+    uses: '30 seconds.',
+    warning: 'the deleted objects do not come back this match.',
   },
 };
+
+// Powerups from the design doc. Three tiers, twelve total. The site shows
+// them grouped, with the cursed tier marked.
+export const POWERUPS = [
+  { id: 'quickfoot',    tier: 'standard', name: 'Quickfoot',    body: '+30% movement speed for 8 seconds.' },
+  { id: 'overflow',     tier: 'standard', name: 'Overflow',     body: 'no reload for 10 seconds.' },
+  { id: 'lastbreath',   tier: 'standard', name: 'Last Breath',  body: 'survive one lethal hit at 1 HP.' },
+
+  { id: 'secondself',   tier: 'surreal',  name: 'Second Self',  body: 'a clone mimics you 1 second delayed. absorbs shots. confuses enemies.' },
+  { id: 'theloop',      tier: 'surreal',  name: 'The Loop',     body: 'records 3 seconds of movement. teleports you back to the start on input.' },
+  { id: 'softedges',    tier: 'surreal',  name: 'Soft Edges',   body: 'hitbox shrinks 30% for 8 seconds.' },
+  { id: 'heavyair',     tier: 'surreal',  name: 'Heavy Air',    body: 'bullets travel 50% slower in a radius around you. yours too.' },
+  { id: 'thehum',       tier: 'surreal',  name: 'The Hum',      body: 'hear all enemies through walls for 15 seconds.' },
+  { id: 'falsefoot',    tier: 'surreal',  name: 'Falsefoot',    body: 'your footsteps play 10 studs offset from where you actually are.' },
+
+  { id: 'borrowedtime', tier: 'cursed',   name: 'Borrowed Time',body: '50% damage reduction. BUT every hit permanently lowers your max HP.' },
+  { id: 'lensflare',    tier: 'cursed',   name: 'Lensflare',    body: '+25% speed. BUT your eyes glow through walls to enemies.' },
+  { id: 'skipframe',    tier: 'cursed',   name: 'Skipframe',    body: 'enemies see every other frame of your model. you see every other frame of theirs.' },
+];
 
 // Credits scroll. Real names + in-character "departments."
 export const CREDITS = [

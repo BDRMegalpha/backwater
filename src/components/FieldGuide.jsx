@@ -50,6 +50,10 @@ function ArtifactDossier({ id }) {
         <dl className="grid sm:grid-cols-[140px_1fr] gap-x-3 gap-y-2 text-xs">
           <dt className="text-bw-dim">classifier</dt>
           <dd>{g.classifier}</dd>
+          <dt className="text-bw-dim">mechanic</dt>
+          <dd className="text-bw-bone">{g.mechanic}</dd>
+          <dt className="text-bw-dim">uses</dt>
+          <dd>{g.uses}</dd>
           <dt className="text-bw-dim">first discovered</dt>
           <dd>{g.discovered}</dd>
           <dt className="text-bw-dim">sightings to date</dt>

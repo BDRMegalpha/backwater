@@ -6,6 +6,7 @@ const ITEMS = [
   ['loadout',      'loadout'],
   ['artifacts',    'artifacts'],
   ['fieldguide',   'guide'],
+  ['powerups',     'power'],
   ['builder',      'build'],
   ['map',          'map'],
   ['transmissions','txns'],

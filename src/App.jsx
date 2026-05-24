@@ -24,6 +24,7 @@ import { Soundboard } from './components/Soundboard';
 import { Roadmap } from './components/Roadmap';
 import { Stats } from './components/Stats';
 import { FieldGuide } from './components/FieldGuide';
+import { Powerups } from './components/Powerups';
 import { LoadoutBuilder } from './components/LoadoutBuilder';
 import { Credits } from './components/Credits';
 import { LobbyChat } from './components/LobbyChat';
@@ -118,6 +119,7 @@ export default function App() {
       <Transmissions discovered={discovered} discover={discover} onTone={tone} />
       <Devlog discovered={discovered} discover={discover} onTone={tone} />
       <FieldGuide onTone={tone} />
+      <Powerups />
       <LoadoutBuilder onTone={tone} />
       <AimTest onTone={tone} />
       <Reaction onTone={tone} />
