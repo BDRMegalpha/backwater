@@ -15,6 +15,8 @@ import { Map } from './components/Map';
 import { Transmissions } from './components/Transmissions';
 import { Devlog } from './components/Devlog';
 import { AimTest } from './components/AimTest';
+import { LobbyChat } from './components/LobbyChat';
+import { Downloads } from './components/Downloads';
 import { Wallet } from './components/Wallet';
 import { Faq } from './components/Faq';
 import { Press } from './components/Press';
@@ -102,8 +104,10 @@ export default function App() {
       <Transmissions discovered={discovered} discover={discover} onTone={tone} />
       <Devlog discovered={discovered} discover={discover} onTone={tone} />
       <AimTest onTone={tone} />
+      <LobbyChat />
       <Wallet discoveredCount={count} onTone={tone} />
       <Faq onTone={tone} />
+      <Downloads onTone={tone} />
       <Press onTone={tone} />
       <Guestbook discover={discover} onTone={tone} />
       <Footer discoveredCount={count} onReset={() => { clear(); setToast('discoveries erased. the lobby will not remember you.'); }} />

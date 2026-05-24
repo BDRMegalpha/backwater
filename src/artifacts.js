@@ -289,6 +289,26 @@ export const TRANSMISSIONS = [
   },
 ];
 
+// Live lobby chat seed. Loops endlessly. Users are mostly dead, occasionally
+// the broadcast tower or an admin types something cryptic.
+export const LOBBY_CHAT = [
+  { u: 'crayonmaiden', t: 'queue up. i need a match.' },
+  { u: '404_meridian', t: 'nobody is in the attic right now. nobody is ever in the attic.' },
+  { u: 'mrk_03',       t: 'is anyone here actually real' },
+  { u: 'broadcast.tower', t: 'signal: weak. listeners: 1247.', flair: 'sys' },
+  { u: 'liam',         t: 'i can hear you typing.', flair: 'dev' },
+  { u: 'pls',          t: 'add ranked' },
+  { u: 'crayonmaiden', t: 'pls stop' },
+  { u: 'admin@backwater', t: 'someone left the door open. do not panic.', flair: 'sys' },
+  { u: '404_meridian', t: 'i found a sector that isn’t on the map. it is on the SOUND map. listen up.' },
+  { u: 'mrk_03',       t: 'the witness saw me through three walls. that’s not how it’s supposed to work' },
+  { u: 'liam',         t: 'that is exactly how it is supposed to work.', flair: 'dev' },
+  { u: 'unknown',      t: 'YOU/STAYED/TOO/LONG. PLEASE/QUEUE.', flair: 'corrupt' },
+  { u: 'pls',          t: 'ok forget ranked. add a battle pass' },
+  { u: 'liam',         t: 'no.', flair: 'dev' },
+  { u: 'crayonmaiden', t: 'i love it here' },
+];
+
 // FAQ entries. Press-pitch tone but in-character.
 export const FAQ = [
   {

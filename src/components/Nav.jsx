@@ -9,8 +9,10 @@ const ITEMS = [
   ['transmissions','txns'],
   ['devlog',       'devlog'],
   ['aimtest',      'aim'],
+  ['chat',         'chat'],
   ['wallet',       'echoes'],
   ['faq',          'faq'],
+  ['downloads',    'dl'],
   ['press',        'press'],
   ['guestbook',    'guestbook'],
 ];

@@ -226,6 +226,23 @@ a, button, input, textarea, select, [role="button"], [data-cursor="text"] {
   text-transform: uppercase;
 }
 
+/* print stylesheet — render a flat, lo-fi document if printed */
+@media print {
+  .scanlines::before, .scanlines::after, .flicker, .glitch-x, .crt-text, .hum, .nav-glow, .boot {
+    display: none !important;
+    animation: none !important;
+  }
+  html, body, #root {
+    background: #fff !important;
+    color: #000 !important;
+    font-family: "Courier New", Courier, monospace !important;
+  }
+  nav, .skip-link { display: none !important; }
+  section { page-break-inside: avoid; }
+  a[href]::after { content: " (" attr(href) ")"; color: #444; font-size: 9pt; }
+  .chip { border-color: #000 !important; color: #000 !important; }
+}
+
 /* corrupted text effect for transmissions */
 .corrupt-line {
   position: relative;
